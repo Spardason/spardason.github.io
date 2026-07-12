@@ -1,6 +1,45 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <h1>Hello World from GitHub Pages!</h1>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub Page</title>
+    <style>
+        .hero-banner {
+            /* 1. SET YOUR IMAGE HERE */
+            background-image: url('Banner_Gradient.png'); 
+            
+            /* 2. MAKE SURE THE IMAGE STRETCHES AND CENTERS PERFECTLY */
+            background-size: cover;       /* Stretches image to fill the banner without distorting */
+            background-position: center;   /* Centers the image horizontally and vertically */
+            background-repeat: no-repeat;  /* Prevents the image from repeating like wallpaper */
+            
+            /* 3. SIZE AND TEXT STYLING */
+            min-height: 300px;             /* Sets a minimum height for your banner */
+            color: white;                  /* Makes text white so it stands out */
+            display: flex;                 /* Uses flexbox to easily position text */
+            flex-direction: column;        /* Stacks h1 and p vertically */
+            justify-content: center;       /* Centers text vertically */
+            align-items: center;           /* Centers text horizontally */
+            text-align: center;
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        /* Adds a dark shadow behind text so it's readable over light images */
+        .hero-banner h1, .hero-banner p {
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); 
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- The Banner Container -->
+    <div class="hero-banner">
+        <h1>Welcome to My Website</h1>
+        <p>Hosted successfully on GitHub Pages!</p>
+    </div>
+
+</body>
 </html>
