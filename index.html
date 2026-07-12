@@ -104,6 +104,53 @@
         .content-section p {
             line-height: 1.6;            
         }
+
+                /* 1. NEW SIDE-BY-SIDE MEDIA CONTAINER */
+        .media-block {
+            display: flex;
+            align-items: flex-start;  /* Aligns image and text to the top */
+            gap: 25px;                /* Adds space between image and text */
+            background-color: #1a1a1a;/* Lighter gray card to pop out against the background */
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+            border: 1px solid #2d2d2d;
+        }
+
+        .media-image {
+            width: 150px;             /* Fixed width for your tool image */
+            height: 150px;            /* Fixed height */
+            object-fit: cover;        /* Crops cleanly without stretching */
+            border-radius: 6px;       
+        }
+
+        .media-content {
+            flex: 1;                  /* Allows text box to fill remaining right-side space */
+        }
+
+        .media-content p {
+            margin: 0 0 15px 0;       /* Leaves clean spacing above the link */
+        }
+
+        .media-link {
+            color: #4f46e5;           
+            text-decoration: none;    
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .media-link:hover {
+            text-decoration: underline; 
+        }
+
+        /* Responsive design: Stacks vertically on mobile screens */
+        @media (max-width: 600px) {
+            .media-block {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -112,7 +159,7 @@
         <h1>Welcome to My Website</h1>
     </div>
 
-        <!-- 2. THE NAVIGATION BAR -->
+    <!-- 2. THE NAVIGATION BAR -->
     <nav class="navbar">
         <div class="navbar-container">
             <a href="#" class="navbar-brand">My Site</a>
@@ -123,16 +170,29 @@
         </div>
     </nav>
 
-        <!-- About Section -->
+    <!-- About Section -->
     <div class="content-section" id="about">
         <h2>About This Project</h2>
-        <p>This site is completely configured in Dark Mode. By utilizing CSS properties on the body element, the layout avoids eye strain and mimics popular dark interfaces.</p>
+        <p>Hello! I am a passionate Unity developer and have been for over 10 years! I made a lot of editor tools over multiple projects and want to share them. Hope you enjoy! Cheers! \n Tools will be added o ver time, full time worker and father of 4 kids, so please bear with me!</p>
     </div>
 
-    <!-- 3. THE NEW TOOLS SECTION -->
+    <!-- 2. THE TOOLS SECTION WITH MEDIA BLOCK INSIDE -->
     <div class="content-section" id="tools">
         <h2>Tools</h2>
-        <p>Welcome to the Tools section! This is where you can list your favourite development tools, hardware setups, web software, or project utilities.</p>
+        <p>Check out the featured utility tool listed below. You can easily duplicate this box structure to list multiple items.</p>
+        
+        <!-- The Image + Description Block -->
+        <div class="media-block">
+            <!-- Swap this Unsplash web link with your own image file name if uploaded to your repo -->
+            <img src="https://unsplash.com" alt="Tool Screenshot" class="media-image">
+            
+            <div class="media-content">
+                <p>This is a detailed layout block showcasing my favorite tool. The configuration uses modern flexbox rules to pin the image container directly to the left, while wrapping your running commentary cleanly on the right side.</p>
+                <!-- Swap '#' with your actual destination web address -->
+                <a href="https://github.com" target="_blank" class="media-link">Launch Tool Website &rarr;</a>
+            </div>
+        </div>
+
     </div>
 </body>
 </html>
