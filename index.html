@@ -13,7 +13,53 @@
             margin: 0;                   /* Removes default browser edge spacing */
             padding: 0;
         }
+
+        /*NAV BAR (TABS)*/
+        .navbar {
+            background-color: #1a1a1a;   /* Slightly lighter gray so nav bar stands out */
+            position: sticky;            /* Sticks the nav bar to the top of screen as you scroll */
+            top: 0;
+            z-index: 1000;               /* Keeps nav bar on top of all other elements */
+            border-bottom: 1px solid #2d2d2d;
+        }
+
+        .navbar-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between; /* Puts site title on left, tabs on right */
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .navbar-tabs {
+            list-style: none;            /* Removes bullet points */
+            margin: 0;
+            padding: 0;
+            display: flex;               /* Aligns tabs horizontally */
+            gap: 20px;                   /* Puts spacing between tabs */
+        }
+
+        .navbar-tabs a {
+            color: #b0b0b0;
+            text-decoration: none;       /* Removes link underline */
+            font-size: 1rem;
+            transition: color 0.2s;      /* Smooth color change on hover */
+        }
+
+        /* Changes tab color when you hover your mouse over it */
+        .navbar-tabs a:hover {
+            color: #4f46e5;              
+        }
         
+        /* BANNER */
         .hero-banner {
             /* 1. SET YOUR IMAGE HERE */
             background-image: url('Banner_Gradient.png'); 
@@ -40,14 +86,53 @@
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); 
             margin: 5px 0;
         }
+
+        /* CONTENT AREAS */
+        .content-section {
+            max-width: 800px;
+            margin: 40px auto;           
+            padding: 0 20px;  
+            scroll-margin-top: 80px;     /* Prevents sticky nav bar from overlapping headers when scrolling */
+        }
+
+        .content-section h2 {
+            color: #4f46e5;              
+            border-bottom: 1px solid #2d2d2d; 
+            padding-bottom: 8px;
+        }
+        
+        .content-section p {
+            line-height: 1.6;            
+        }
     </style>
 </head>
 <body>
-
     <!-- The Banner Container -->
     <div class="hero-banner">
         <h1>Welcome to My Website</h1>
     </div>
 
+        <!-- 2. THE NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-brand">My Site</a>
+            <ul class="navbar-tabs">
+                <li><a href="#about">About</a></li>
+                <li><a href="#tools">Tools</a></li> <!-- The new Tools Tab -->
+            </ul>
+        </div>
+    </nav>
+
+        <!-- About Section -->
+    <div class="content-section" id="about">
+        <h2>About This Project</h2>
+        <p>This site is completely configured in Dark Mode. By utilizing CSS properties on the body element, the layout avoids eye strain and mimics popular dark interfaces.</p>
+    </div>
+
+    <!-- 3. THE NEW TOOLS SECTION -->
+    <div class="content-section" id="tools">
+        <h2>Tools</h2>
+        <p>Welcome to the Tools section! This is where you can list your favourite development tools, hardware setups, web software, or project utilities.</p>
+    </div>
 </body>
 </html>
